@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "extVehicleTrackingApp", "extVehicleTrackingApp\extVehicleTrackingApp.csproj", "{A78007F5-2613-41CA-B355-0D12A038A438}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "extVehicleTrackingAppAPIs", "extVehicleTrackingAppAPIs\extVehicleTrackingAppAPIs.csproj", "{CB5C5F97-FCEA-4A5B-B7B3-3C7DC5A2803B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A78007F5-2613-41CA-B355-0D12A038A438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A78007F5-2613-41CA-B355-0D12A038A438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A78007F5-2613-41CA-B355-0D12A038A438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A78007F5-2613-41CA-B355-0D12A038A438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB5C5F97-FCEA-4A5B-B7B3-3C7DC5A2803B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB5C5F97-FCEA-4A5B-B7B3-3C7DC5A2803B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB5C5F97-FCEA-4A5B-B7B3-3C7DC5A2803B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB5C5F97-FCEA-4A5B-B7B3-3C7DC5A2803B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F0852E4-F540-4889-B339-0F474797A506}
+	EndGlobalSection
+EndGlobal
