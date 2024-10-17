@@ -31,6 +31,41 @@ namespace extVehicleTrackingAppAPIs.Controllers
                 throw;
             }
         }
+        [HttpGet("getallbyorg")]
+        public async Task<IEnumerable<ExtVehicle>> VehicleGetAllByOrg(int OrgId)
+        {
+            try
+            {
+                var response = await VehicleService.VehicleGetAllByOrg(OrgId);
+                if (response == null)
+                {
+                    return null;
+                }
+                return response;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        [HttpPut("updatevehicle")]
+        public async Task<IActionResult> VehicleUpdate(ExtVehicle vehicle)
+        {
+            if (vehicle == null)
+            {
+                return BadRequest();
+            }
+            try
+            {
+                var response = await VehicleService.VehicleUpdate(vehicle);
+                return Ok(response);
+            }
+            catch
+            {
+                throw;
+            }
+        }
 
     }
 }
