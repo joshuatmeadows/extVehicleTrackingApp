@@ -67,5 +67,12 @@ namespace extVehicleTrackingAppAPIs.Controllers
             }
         }
 
+        [HttpDelete("deletevehicle")]
+        public async Task<IActionResult> VehicleDelete(int vehicleId)
+        {
+            var response = await VehicleService.VehicleDelete(vehicleId);
+            return Ok(response);
+        }
+
     }
 }
