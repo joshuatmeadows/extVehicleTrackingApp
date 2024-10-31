@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using extVehicleTrackingApp.Data;
 
 namespace extVehicleTrackingApp.Data
 {
@@ -9,5 +10,6 @@ namespace extVehicleTrackingApp.Data
             : base(options)
         {
         }
+        public DbSet<extVehicleTrackingApp.Data.ExtVehicle> ExtVehicle { get; set; } = default!;
     }
 }

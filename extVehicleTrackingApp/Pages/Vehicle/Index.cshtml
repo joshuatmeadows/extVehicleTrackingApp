@@ -1,0 +1,84 @@
+﻿@page
+@model extVehicleTrackingApp.Pages.Vehicle.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Vin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Plate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Inspection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Surplus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Filepath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExtVehicle[0].Org)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ExtVehicle) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Plate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inspection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surplus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Filepath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Org.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
