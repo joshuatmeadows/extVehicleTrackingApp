@@ -3,6 +3,8 @@ using extVehicleTrackingAppAPIs.Repositories;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Identity.Web;
+using extVehicleTrackingAppAPIs.Data;
+using extVehicleTrackingAppAPIs.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

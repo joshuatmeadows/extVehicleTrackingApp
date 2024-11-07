@@ -1,5 +1,7 @@
+
 ﻿using extVehicleTrackingAppAPIs.Data;
 using Microsoft.EntityFrameworkCore;
+
 namespace extVehicleTrackingAppAPIs.Data
 {
     public class DbContextClass : DbContext
@@ -14,6 +16,8 @@ namespace extVehicleTrackingAppAPIs.Data
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
         }
         public DbSet<ExtVehicle> ExtVehicle { get; set; }
+
         public DbSet<ExtVehicleTrip> ExtVehicleTrip { get; set; }
     }
 }
+

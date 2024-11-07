@@ -55,6 +55,7 @@ namespace extVehicleTrackingAppAPIs.Repositories
         {
             var param = new SqlParameter("@vehicle_id", vehicleId);
             return await _dbContext.Database.ExecuteSqlRawAsync("exec spVehicleDelete @vehicle_id", param);
+
         }
     }
 }
