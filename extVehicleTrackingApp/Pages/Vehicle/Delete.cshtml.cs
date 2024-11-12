@@ -11,9 +11,9 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 {
     public class DeleteModel : PageModel
     {
-        private readonly extVehicleTrackingApp.Data.ApplicationDbContext _context;
+        private readonly extVehicleTrackingApp.Data.VehichleTrackingDbContext _context;
 
-        public DeleteModel(extVehicleTrackingApp.Data.ApplicationDbContext context)
+        public DeleteModel(extVehicleTrackingApp.Data.VehichleTrackingDbContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
                 return NotFound();
             }
 
-            var extvehicle = await _context.ExtVehicle.FirstOrDefaultAsync(m => m.Id == id);
+            var extvehicle = await _context.ExtVehicles.FirstOrDefaultAsync(m => m.Id == id);
 
             if (extvehicle == null)
             {
@@ -48,11 +48,11 @@ namespace extVehicleTrackingApp.Pages.Vehicle
                 return NotFound();
             }
 
-            var extvehicle = await _context.ExtVehicle.FindAsync(id);
+            var extvehicle = await _context.ExtVehicles.FindAsync(id);
             if (extvehicle != null)
             {
                 ExtVehicle = extvehicle;
-                _context.ExtVehicle.Remove(ExtVehicle);
+                _context.ExtVehicles.Remove(ExtVehicle);
                 await _context.SaveChangesAsync();
             }
 

@@ -21,9 +21,9 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 
         public IList<ExtVehicle> ExtVehicle { get;set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(string OrgId)
+        public async Task<IActionResult> OnGetAsync(string id)
         {
-            if(string.IsNullOrEmpty(OrgId))
+            if(string.IsNullOrEmpty(id))
             {
                 return Page();
             }
@@ -31,7 +31,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
             try
             {
                 // make the endpoint string we want to hit
-                string requestUrl = $"https://localhost:7099/api/Vehicle/getallbyorg?OrgId={Uri.EscapeDataString(OrgId)}";
+                string requestUrl = $"https://localhost:7099/api/Vehicle/getallbyorg?OrgId={Uri.EscapeDataString(id)}";
 
                 // Send the GET request to the API
                 ExtVehicle = await _httpClient.GetFromJsonAsync<IList<ExtVehicle>>(requestUrl) ?? new List<ExtVehicle>();

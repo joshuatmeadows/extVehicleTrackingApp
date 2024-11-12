@@ -11,9 +11,9 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 {
     public class CreateModel : PageModel
     {
-        private readonly extVehicleTrackingApp.Data.ApplicationDbContext _context;
+        private readonly extVehicleTrackingApp.Data.VehichleTrackingDbContext _context;
 
-        public CreateModel(extVehicleTrackingApp.Data.ApplicationDbContext context)
+        public CreateModel(extVehicleTrackingApp.Data.VehichleTrackingDbContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
                 return Page();
             }
 
-            _context.ExtVehicle.Add(ExtVehicle);
+            _context.ExtVehicles.Add(ExtVehicle);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -10,6 +10,6 @@ namespace extVehicleTrackingApp.Data
             : base(options)
         {
         }
-        public DbSet<extVehicleTrackingApp.Data.ExtVehicle> ExtVehicle { get; set; } = default!;
+        //public DbSet<extVehicleTrackingApp.Data.ExtVehicle> ExtVehicle { get; set; } = default!;
     }
 }

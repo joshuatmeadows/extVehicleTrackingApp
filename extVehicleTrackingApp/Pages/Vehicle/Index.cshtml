@@ -77,8 +77,19 @@
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                <button onclick="vehicleTripByVehicle(1);">Vehicle Trip</button>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<script type="module">
+    function vehicleTripByVehicle(vehicleId) {
+    let data = fetch(`https://localhost:7099/getbyvehicle?vehicleId=${vehicleId}`, {
+        headers: {
+            'accept': 'text/plain'
+        }
+    });
+}
+</script>

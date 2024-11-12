@@ -12,9 +12,9 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 {
     public class EditModel : PageModel
     {
-        private readonly extVehicleTrackingApp.Data.ApplicationDbContext _context;
+        private readonly extVehicleTrackingApp.Data.VehichleTrackingDbContext _context;
 
-        public EditModel(extVehicleTrackingApp.Data.ApplicationDbContext context)
+        public EditModel(extVehicleTrackingApp.Data.VehichleTrackingDbContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
                 return NotFound();
             }
 
-            var extvehicle =  await _context.ExtVehicle.FirstOrDefaultAsync(m => m.Id == id);
+            var extvehicle =  await _context.ExtVehicles.FirstOrDefaultAsync(m => m.Id == id);
             if (extvehicle == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 
         private bool ExtVehicleExists(int id)
         {
-            return _context.ExtVehicle.Any(e => e.Id == id);
+            return _context.ExtVehicles.Any(e => e.Id == id);
         }
     }
 }

@@ -11,9 +11,9 @@ namespace extVehicleTrackingApp.Pages.Vehicle
 {
     public class DetailsModel : PageModel
     {
-        private readonly extVehicleTrackingApp.Data.ApplicationDbContext _context;
+        private readonly extVehicleTrackingApp.Data.VehichleTrackingDbContext _context;
 
-        public DetailsModel(extVehicleTrackingApp.Data.ApplicationDbContext context)
+        public DetailsModel(extVehicleTrackingApp.Data.VehichleTrackingDbContext context)
         {
             _context = context;
         }
@@ -27,7 +27,7 @@ namespace extVehicleTrackingApp.Pages.Vehicle
                 return NotFound();
             }
 
-            var extvehicle = await _context.ExtVehicle.FirstOrDefaultAsync(m => m.Id == id);
+            var extvehicle = await _context.ExtVehicles.FirstOrDefaultAsync(m => m.Id == id);
             if (extvehicle == null)
             {
                 return NotFound();

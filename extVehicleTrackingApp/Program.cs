@@ -17,6 +17,19 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddHttpClient();
 builder.Services.AddRazorPages();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowMyRazorPagesApp",
+        builder =>
+        {
+            builder.WithOrigins("https://localhost:7099")
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+        }
+
+        );
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,7 +48,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseCors("AllowMyRazorPagesApp");
 app.UseAuthorization();
 
 app.MapRazorPages();
